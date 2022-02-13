@@ -1,4 +1,5 @@
 const fs = require("fs/promises");
+const http = require('http')
 const TelegramBot = require("node-telegram-bot-api");
 const BlaguesAPI = require("blagues-api");
 const text2png = require("text2png");
@@ -45,3 +46,8 @@ jokesBot.onText(/help (.+)/, (msg, match) => {
     "Commandes valables:\n1- blague\n2-blagueImage\nCommande à renter plus le numéro de la blague";
   jokesBot.sendMessage(id, help);
 });
+
+const server = http.createServer()
+const port = process.env.PORT || 8080
+
+server.listen(port)

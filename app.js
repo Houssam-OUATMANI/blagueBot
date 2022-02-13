@@ -22,7 +22,8 @@ jokesBot.onText(/blague (.+)/, async (msg, match) => {
   const part2 = `Réponse : ${blague.answer}`;
 
   jokesBot.sendMessage(id, part1);
-  setTimeout(() => jokesBot.sendMessage(id, part2), 5000);
+  const t = setTimeout(() => jokesBot.sendMessage(id, part2), 5000);
+  clearTimeout(t);
 });
 
 jokesBot.onText(/blagueImage (.+)/, async (msg, match) => {

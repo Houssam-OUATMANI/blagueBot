@@ -3,8 +3,8 @@ const TelegramBot = require("node-telegram-bot-api");
 const BlaguesAPI = require("blagues-api");
 const text2png = require("text2png");
 
-require("dotenv").config();
-
+/* require("dotenv").config();
+ */
 const token = process.env.BOT_TOKEN;
 const blagueToken = process.env.BLAGUES_TOKEN;
 const blagues = new BlaguesAPI(blagueToken);
